@@ -1,0 +1,73 @@
+<div class="cal-table">
+    <div class="row">
+        <div class="col large-8 medium-8 small-8">
+            <h4>Current Range Single Burner BTU Rating</h4>
+        </div>
+        <div class="col large-4 medium-4 small-4"><input class="inputBox" id="burner_btu" value="31000" onkeypress="return isNumber(event)" type="number" min="1" max="24"></div>
+    </div>
+    <div class="row">
+        <div class="col large-8 medium-8 small-8">
+            <h4>Cost Per Therm</h4>
+        </div>
+        <div class="col large-4 medium-4 small-4">
+            <input type="text" id="cost_per_therm" value="$1.25" name="cost_per_therm" readonly>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col large-8 medium-8 small-8">
+            <h4>Daily Hours of Units Operation</h4>
+        </div>
+        <div class="col large-4 medium-4 small-4"><input class="inputBox" id="hours_opr" onkeypress="return isNumber(event)" type="number" min="1" max="24"></div>
+    </div>
+    <div class="row">
+        <div class="col large-8 medium-8 small-8">
+            <h4>Days Per Year</h4>
+        </div>
+        <div class="col large-4 medium-4 small-4"><input class="inputBox" id="days_per_year" onkeypress="return isNumber(event)" type="number" min="1" max="365" ></div>
+    </div>
+    <div class="row">
+        <div class="col large-8 medium-8 small-8">
+            <h4>Burners Per Range</h4>
+        </div>
+        <div class="col large-4 medium-4 small-4"><input class="inputBox" id="per_rang" onkeypress="return isNumber(event)" type="number"></div>
+    </div>
+    <div class="row">
+        <div class="col large-8 medium-8 small-8">
+            <h4># of Range Per Location</h4>
+        </div>
+        <div class="col large-4 medium-4 small-4"><input class="inputBox" id="rang_loc" onkeypress="return isNumber(event)" type="number"></div>
+    </div>
+    <div class="row">
+        <div class="col large-8 medium-8 small-8">
+            <h4># of Locations</h4>
+        </div>
+        <div class="col large-4 medium-4 small-4"><input class="inputBox" id="no_loc" onkeypress="return isNumber(event)" type="number"></div>
+    </div>
+    <div class="row">
+        <div class="col large-8 medium-8 small-8">
+            <h4 class="middle-heading">Percentage of Savings<br><small>(Based off BTU Rating’s)</small></h4>
+        </div>
+        <div class="col large-4 medium-4 small-4">
+            <input class="inputBox" style="display: inline-block;" id="use_red" type="text">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col large-12 medium-12 small-12">
+            <h4 style="display: none;">Calculations are based off an industry average for BTU's per burner of 31,000 and 18,000 BTU's rating for the VT Burner. Cost per Therm is based off a National average of $1.25.</h4>
+        </div>
+        <div class="col large-12 medium-12 small-12 text-right" style="margin-bottom: 10px;">
+            <button class="btn btn-danger mt-3 " id="calculate">Get Result</button>
+        </div>
+    </div>
+    <div style="display: none;" class="row" id="calc_table" hidden><input type="hidden" id="daily_bur_cost" name ="daily_bur_cost" class="form-control" onkeypress="return isNumber(event)" Readonly ><br /><input type="hidden" id="month_bur_cost" name ="month_bur_cost" class="form-control" onkeypress="return isNumber(event)" Readonly><br /><input type="hidden" id="yearly_bur_cost" name ="yearly_bur_cost" class="form-control" onkeypress="return isNumber(event)" Readonly><br /><input type="hidden" id="yrly_per_cost_rng" name ="yrly_per_cost_rng" class="form-control" onkeypress="return isNumber(event)" Readonly><br /><input type="hidden" id="yrly_per_cost_loc" name ="yrly_per_cost_loc" class="form-control" onkeypress="return isNumber(event)" Readonly><br /><input type="hidden" id="cost_bus" name ="cost_bus" class="form-control" onkeypress="return isNumber(event)" Readonly><br /><input type="hidden" id="sav_per_yr" name ="sav_per_yr" class="form-control" onkeypress="return isNumber(event)"Readonly></p>
+        <div class="col-md-4"><input type="text" id="email_to_txt" class="form-control" placeholder="Enter Your Email Id"></div>
+        <div class="col-md-4"><input type="text" id="fname_txt" class="form-control" placeholder="Enter Your First Name"></div>
+        <div class="col-md-4"><input type="text" id="lname_txt" class="form-control" placeholder="Enter Your Last Name"></div>
+        <div>
+            <div class="col-md-12 clearfix " style="display: flex;justify-content: center;">
+                <button class="btn btn-danger " id="mail_val">Send Email Now</button>
+                <span id="status"></span>
+            </div>
+        </div>
+    </div>
+</div>
